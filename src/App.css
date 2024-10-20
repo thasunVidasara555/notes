@@ -1,0 +1,122 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f5f5;
+}
+
+.App-header {
+  background-color: #4a90e2;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.App-header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.App-header button {
+  background-color: #ffffff;
+  color: #4a90e2;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.App-header button:hover {
+  background-color: #e6e6e6;
+}
+
+.App-main {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.note-list {
+  width: 30%;
+  border-right: 1px solid #e0e0e0;
+  overflow-y: auto;
+  background-color: #ffffff;
+}
+
+.note-item {
+  padding: 15px;
+  cursor: pointer;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.3s ease;
+}
+
+.note-item:hover {
+  background-color: #f9f9f9;
+}
+
+.note-item.selected {
+  background-color: #e8f0fe;
+}
+
+.note-item h3 {
+  margin: 0 0 5px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.note-item p {
+  margin: 0;
+  font-size: 12px;
+  color: #888;
+}
+
+.note-editor {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+.note-editor input,
+.note-editor textarea {
+  margin-bottom: 15px;
+  font-size: 16px;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+}
+
+.note-editor textarea {
+  flex: 1;
+  resize: none;
+}
+
+.note-editor button {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-right: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.note-editor button:hover {
+  background-color: #3a7bc8;
+}
+
+.note-editor button:last-child {
+  background-color: #e74c3c;
+}
+
+.note-editor button:last-child:hover {
+  background-color: #c0392b;
+}
