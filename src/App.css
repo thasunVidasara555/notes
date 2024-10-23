@@ -1,122 +1,167 @@
+:root {
+  --primary-color: #4a90e2;
+  --secondary-color: #f5a623;
+  --background-color: #f0f4f8;
+  --text-color: #333;
+  --border-color: #e0e0e0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
 .App {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  font-family: 'Arial', sans-serif;
-  background-color: #f5f5f5;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 .App-header {
-  background-color: #4a90e2;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  background-color: var(--primary-color);
   color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
 }
 
 .App-header h1 {
   margin: 0;
-  font-size: 24px;
+  font-size: 2.5rem;
 }
 
-.App-header button {
-  background-color: #ffffff;
-  color: #4a90e2;
+.App-header div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+button {
+  background-color: var(--secondary-color);
+  color: white;
   border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
+  padding: 10px 20px;
+  border-radius: 4px;
   cursor: pointer;
-  font-size: 14px;
   transition: background-color 0.3s ease;
 }
 
-.App-header button:hover {
-  background-color: #e6e6e6;
+button:hover {
+  background-color: #e69100;
 }
 
 .App-main {
   display: flex;
-  flex: 1;
-  overflow: hidden;
+  gap: 20px;
 }
 
 .note-list {
-  width: 30%;
-  border-right: 1px solid #e0e0e0;
-  overflow-y: auto;
-  background-color: #ffffff;
+  flex: 1;
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.note-editor {
+  flex: 2;
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .note-item {
-  padding: 15px;
+  background-color: #f9f9f9;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
   cursor: pointer;
-  border-bottom: 1px solid #f0f0f0;
   transition: background-color 0.3s ease;
 }
 
 .note-item:hover {
-  background-color: #f9f9f9;
+  background-color: #e6e6e6;
 }
 
 .note-item.selected {
-  background-color: #e8f0fe;
-}
-
-.note-item h3 {
-  margin: 0 0 5px 0;
-  font-size: 16px;
-  color: #333;
-}
-
-.note-item p {
-  margin: 0;
-  font-size: 12px;
-  color: #888;
-}
-
-.note-editor {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  background-color: #ffffff;
-}
-
-.note-editor input,
-.note-editor textarea {
-  margin-bottom: 15px;
-  font-size: 16px;
-  padding: 10px;
-  border: 1px solid #e0e0e0;
-  border-radius: 5px;
-}
-
-.note-editor textarea {
-  flex: 1;
-  resize: none;
-}
-
-.note-editor button {
-  background-color: #4a90e2;
+  background-color: var(--primary-color);
   color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 14px;
-  margin-right: 10px;
-  transition: background-color 0.3s ease;
 }
 
-.note-editor button:hover {
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+textarea {
+  min-height: 200px;
+  resize: vertical;
+}
+
+.admin-cli {
+  background-color: #2b2b2b;
+  color: #f0f0f0;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+  font-family: 'Courier New', monospace;
+}
+
+.admin-cli h2 {
+  color: var(--secondary-color);
+  margin-top: 0;
+}
+
+.cli-output {
+  background-color: #1e1e1e;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.admin-cli input[type="text"] {
+  background-color: #3a3a3a;
+  color: #f0f0f0;
+  border: 1px solid #555;
+}
+
+.admin-cli button {
+  background-color: var(--primary-color);
+}
+
+.admin-cli button:hover {
   background-color: #3a7bc8;
 }
 
-.note-editor button:last-child {
-  background-color: #e74c3c;
+.profile-login,
+.profile-loader {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.note-editor button:last-child:hover {
-  background-color: #c0392b;
+.profile-login h2,
+.profile-loader h2 {
+  color: var(--primary-color);
+  margin-top: 0;
+}
+
+.error {
+  color: #d32f2f;
+  margin-top: 10px;
 }

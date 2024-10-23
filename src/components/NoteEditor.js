@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-function NoteEditor({ note, onUpdateNote, onDeleteNote }) {
+function NoteEditor({ note, onUpdateNote, onDeleteNote, onClose, setUnsavedChanges }) {
   const [editedNote, setEditedNote] = useState(note);
 
   useEffect(() => {
@@ -9,14 +9,17 @@ function NoteEditor({ note, onUpdateNote, onDeleteNote }) {
 
   const handleTitleChange = (e) => {
     setEditedNote({ ...editedNote, title: e.target.value });
+    setUnsavedChanges(true);
   };
 
   const handleContentChange = (e) => {
     setEditedNote({ ...editedNote, content: e.target.value });
+    setUnsavedChanges(true);
   };
 
   const handleSave = () => {
     onUpdateNote(editedNote);
+    setUnsavedChanges(false);
   };
 
   return (
@@ -32,9 +35,10 @@ function NoteEditor({ note, onUpdateNote, onDeleteNote }) {
         onChange={handleContentChange}
         placeholder="Note Content"
       />
-      <div>
+      <div className="button-group">
         <button onClick={handleSave}>Save</button>
-        <button onClick={() => onDeleteNote(note.id)}>Delete Note</button>
+        <button onClick={() => onDeleteNote(note.id)}>Delete</button>
+        <button onClick={onClose}>Close</button>
       </div>
     </div>
   );

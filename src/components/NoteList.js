@@ -8,6 +8,7 @@ function NoteList({ notes, onSelectNote, selectedNote }) {
 
   return (
     <div className="note-list">
+      <h2>Your Notes</h2>
       {notes.map(note => (
         <div 
           key={note.id} 
